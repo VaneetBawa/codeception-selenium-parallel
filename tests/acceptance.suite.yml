@@ -1,0 +1,58 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+class_name: AcceptanceTester
+
+modules:
+  enabled:
+    - WebDriver
+  config:
+    WebDriver:
+        url: 'http://www.google.com'
+        host: 'your_username:your_accesskey@hub.lambdatest.com'
+        port: 80
+        browser: firefox
+        capabilities:
+          name: 'Codeception Example'
+          build: 'codeception-sample-2'
+          browser: 'firefox'
+          platform: 'Windows 10'
+          version: 'latest' 
+
+env:
+  single:
+    modules:
+      config:
+        WebDriver:
+          capabilities:
+            'name': 'LT single test'
+
+  parallel_0:
+    modules:
+      config:
+        WebDriver:
+          browser: 'chrome'
+          capabilities:
+            'platform': 'Windows 10'
+            'name': 'LT parallel test'
+
+  parallel_1:
+    modules:
+      config:
+        WebDriver:
+          browser: 'firefox'
+          capabilities:
+            'platform': 'Windows 11'
+            'name': 'LT parallel test'
+
+  parallel_2:
+    modules:
+      config:
+        WebDriver:
+          browser: 'chrome'
+          capabilities:
+            'platform': 'Windows 11'
+            'name': 'LT parallel test'

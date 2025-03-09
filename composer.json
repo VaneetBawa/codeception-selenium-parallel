@@ -1,0 +1,15 @@
+{
+    "require": {
+    "codegyre/robo": "*",
+    "codeception/robo-paracept": "@dev"
+  },
+  "require-dev": {
+    "codeception/codeception": "^4.1.22",
+    "codeception/module-webdriver": "^1.4",
+    "codeception/module-asserts": "^1.3"
+},
+  "scripts": {
+    "single": "vendor/bin/codecept run --env single -g single",
+    "parallel": "vendor/bin/robo parallel:all"
+  }
+}
